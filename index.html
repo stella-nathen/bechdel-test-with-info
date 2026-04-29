@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bechdel Archive</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main>
+    <header>
+      <p class="eyebrow">bechdel archive</p>
+      <h1>films</h1>
+      <p class="intro">
+        a small database of films, and whether they pass the Bechdel Test.
+      </p>
+    </header>
+
+    <section class="controls">
+      <input id="searchInput" type="text" placeholder="search title..." />
+
+      <select id="ratingFilter">
+        <option value="all">all ratings</option>
+        <option value="3">passes</option>
+        <option value="2">unknown</option>
+        <option value="1">dubious</option>
+        <option value="0">fails</option>
+      </select>
+    </section>
+
+    <section id="filmGrid" class="grid"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

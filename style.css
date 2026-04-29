@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: white;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0 40px;
+}
+
+
+
+header {
+  background: #fff2b8;
+  border: 3px solid #111;
+  padding: 26px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 52px;
+  line-height: 0.9;
+  letter-spacing: -1px;
+}
+
+.intro {
+  margin: 14px 0 0;
+  font-size: 18px;
+}
+
+/* search and filters */
+
+.controls {
+  background: #dff3ff;
+  border: 3px solid #111;
+  padding: 14px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 12px;
+}
+
+input,
+select {
+  border: 3px solid #111;
+  background: white;
+  padding: 11px 12px;
+  font: inherit;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+input {
+  flex: 1;
+}
+
+select {
+  width: 160px;
+}
+
+
+
+#filmGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+
+.card {
+  background: #ffd3eb;
+  border: 3px solid #111;
+  padding: 8px;
+  min-width: 0;
+}
+
+.card:nth-child(2n) {
+  background: #dff3ff;
+}
+
+.card:nth-child(3n) {
+  background: #dcffd8;
+}
+
+.card:nth-child(4n) {
+  background: #fff2b8;
+}
+
+/*film photos*/
+
+.poster {
+  width: 100%;
+  height: 180px;
+  border: 2px solid #111;
+  background: white;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.no-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* text on cards*/
+
+.card-body {
+  display: block;
+}
+
+.card-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.year,
+.imdb {
+  font-size: 12px;
+}
+
+.card h2 {
+  margin: 0 0 7px;
+  font-size: 16px;
+  line-height: 1.05;
+}
+
+.bechdel-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 7px;
+}
+
+.badge {
+  display: inline-block;
+  border: 2px solid #111;
+  background: white;
+  padding: 4px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.pass {
+  background: #dcffd8;
+}
+
+.badge.fail {
+  background: #ffd1d1;
+}
+
+.badge.one {
+  background: #ffe4cf;
+}
+
+.badge.two {
+  background: #fff2b8;
+}
+
+.criteria {
+  display: flex;
+  gap: 3px;
+}
+
+.criteria span {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #111;
+  background: white;
+  font-size: 11px;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+}
+
+.criteria span.met {
+  background: #dcffd8;
+}
+
+.bechdel-note {
+  font-size: 12px;
+  line-height: 1.25;
+  margin: 0 0 7px;
+}
+
+.plot {
+  font-size: 12px;
+  line-height: 1.25;
+  margin: 0;
+  max-height: 75px;
+  overflow: hidden;
+}
+
+
+
+.error,
+.empty {
+  background: #ffd1d1;
+  border: 3px solid #111;
+  padding: 14px;
+  grid-column: 1 / -1;
+}
+
+/* phones */
+
+@media (max-width: 900px) {
+  #filmGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .poster {
+    height: 175px;
+  }
+}
+
+@media (max-width: 650px) {
+  main {
+    width: calc(100% - 24px);
+    padding-top: 14px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .controls {
+    display: block;
+  }
+
+  input,
+  select {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  #filmGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .poster {
+    height: 165px;
+  }
+}
